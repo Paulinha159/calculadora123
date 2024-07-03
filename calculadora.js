@@ -1,6 +1,5 @@
 let numero1;
 let numero2;
-let resultados = 0;
 let opcao = 0;
 let adição = false;
 let subtração= false;
@@ -75,16 +74,38 @@ process.stdin.on("data", function (data) {
     }
 
 
+        if(adição){
+            let resultado = numero1 + numero2 
+           console.log ("A adicão entre " + numero1 + " e " + numero2 + "resulta em " + resultado + ".")
+        }
+        else if ( subtração){
+            let resultado1 = numero1 - numero2
+            console.log ("A subtração entre " + numero1 + " e " + numero2 + "resulta em " + resultado + ".")
+        }
+        else if (multiplicação){
+            let resultado = numero1 * numero2 
+        console.log ("A multiplicacão entre " + numero1 + " e " + numero2 + "resulta em " + resultado + ".")
+        }
+        else if (divisão){
+            let resultado = numero1 / numero2 
+        console.log ("A divisão entre " + numero1 + " e " + numero2 + "resulta em " + resultado + ".")
+        }
+        else if (Porcentagem){
+            let resultado = (numero1/100)*numero2 
+        console.log ("A Porcentagem entre " + numero1 + " e " + numero2 + "resulta em " + resultado + ".")
+        }
 
 
 
-    
-   console.log (numero1+numero2)
+        
+
+
+  /* console.log (numero1+numero2)
    console.log( numero1-numero2)
    console.log (numero1*numero2)
    console.log(numero1/numero2)
-   console.log ( (numero1/100 )*numero2)
-    process.exit();
+   console.log ( (numero1/100 )*numero2)*/
+  ;
   }
 }
 
