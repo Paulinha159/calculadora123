@@ -20,7 +20,7 @@ function mensagem() {
 mensagem();
 
 function digitar() {
-  console.log("Digite 2 números que deseja fazer os cálculos:");
+  console.log("Digite 2 números que deseja fazer o cálculo:");
 }
 
 process.stdin.on("data", function (data) {
