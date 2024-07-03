@@ -1,134 +1,101 @@
 let numero1;
 let numero2;
 let opcao = 0;
-let adição = false;
-let subtração= false;
-let multiplicação= false;
-let divisão = false;
-let Porcentagem= false ;
+let adicao = false;
+let subtracao = false;
+let multiplicacao = false;
+let divisao = false;
+let porcentagem = false;
 
-console.log("Escolha uma das opções operações abaixo:");
-console.log("1: adição:");
-console.log("2: subtração");
-console.log("3: multiplicação");
-console.log("4: divisão");
-console.log("5: Porcentagem");
-console.log("6: sair do programa")
+function mensagem() {
+  console.log("Escolha uma das opções operações abaixo:");
+  console.log("1: Adição");
+  console.log("2: Subtração");
+  console.log("3: Multiplicação");
+  console.log("4: Divisão");
+  console.log("5: Porcentagem");
+  console.log("6: Sair do programa");
+}
+
+mensagem();
+
+function digitar() {
+  console.log("Digite 2 números que deseja fazer os cálculos:");
+}
 
 process.stdin.on("data", function (data) {
   let entrada_usuario = data.toString().trim();
-  let input = +data.toString().trim();
+  let input = parseFloat(entrada_usuario); 
+
   if (!opcao) {
     opcao = parseInt(entrada_usuario);
     switch (opcao) {
-        case 1:
-            console.log("Digite 2 números que deseja fazer os calculos:");
-             adição = true;
-                break
-
-        case 2:
-            console.log("Digite 2 números que deseja fazer os calculos:");
-             subtração = true;
-                break
-        case 3:
-            console.log("Digite 2 números que deseja fazer os calculos:");
-             multiplicação = true;
-                break
-        case 4:
-            console.log("Digite 2 números que deseja fazer os calculos:");
-             divisão = true;
-            break
-        case 5:
-            console.log("Digite 2 números que deseja fazer os calculos:");
-             Porcentagem = true;
-                break
-        case 6:
-            console.log("Encerrando o programa...");
-            process.exit();
-            break;
-         default:
-                console.log("Opção inválida. Tente novamente.");
-                console.log("\nEscolha uma das opções abaixo:");
-                console.log("1: adição:");
-                console.log("2: subtração");
-                console.log("3: multiplicação");
-                console.log("4: divisão");
-                console.log("5: Porcentagem");
-                console.log("6: sair do programa");
-                break;
+      case 1:
+        digitar();
+        adicao = true;
+        break;
+      case 2:
+        digitar();
+        subtracao = true;
+        break;
+      case 3:
+        digitar();
+        multiplicacao = true;
+        break;
+      case 4:
+        digitar();
+        divisao = true;
+        break;
+      case 5:
+        digitar();
+        porcentagem = true;
+        break;
+      case 6:
+        console.log("Encerrando o programa...");
+        process.exit();
+        break;
+      default:
+        console.log("Opção inválida. Tente novamente.");
+        mensagem();
+        opcao = 0;
+        break;
     }
   } else {
-  if (!numero1) {
-    numero1 = input;
-    let i;
-    let maior;
-  } else {
-    numero2 = input;
-    let i;
-
-    if (numero1 > numero2) {
-      i = numero1;
+    if (numero1 === undefined) {
+      numero1 = input;
     } else {
-      i = numero2;
-      maior = numero2;
+      numero2 = input;
+
+      if (adicao) {
+        let resultado = numero1 + numero2;
+        console.log("A adição entre " + numero1 + " e " + numero2 + " resulta em " + resultado + ".");
+        adicao = false;
+      } else if (subtracao) {
+        let resultado = numero1 - numero2;
+        console.log("A subtração entre " + numero1 + " e " + numero2 + " resulta em " + resultado + ".");
+        subtracao = false;
+      } else if (multiplicacao) {
+        let resultado = numero1 * numero2;
+        console.log("A multiplicação entre " + numero1 + " e " + numero2 + " resulta em " + resultado + ".");
+        multiplicacao = false;
+      } else if (divisao) {
+        if (numero2 === 0) {
+          console.log("Erro: Divisão por zero não é permitida.");
+        } else {
+          let resultado = numero1 / numero2;
+          console.log("A divisão entre " + numero1 + " e " + numero2 + " resulta em " + resultado + ".");
+        }
+        divisao = false;
+      } else if (porcentagem) {
+        let resultado = ((numero1 / 100) * numero2);
+        console.log("A porcentagem entre " + numero1 + " e " + numero2 + " resulta em " + resultado + ".");
+        porcentagem = false;
+      }
+
+      opcao = 0;
+      numero1 = undefined;
+      numero2 = undefined;
+      mensagem();
     }
-
-
-        if(adição){
-            let resultado = numero1 + numero2 
-           console.log ("A adicão entre " + numero1 + " e " + numero2 + " resulta em " + resultado + ".")
-           adição = false;
-           opcao=0
-           numero1=0
-           numero2=0
-           
-        }
-        else if ( subtração){
-            let resultado = numero1 - numero2
-            console.log ("A subtração entre " + numero1 + " e " + numero2 + " resulta em " + resultado + ".")
-            subtração = false;
-            console.log("\nEscolha uma das opções abaixo:");
-            console.log("1: Digitar as informações da consulta:");
-            console.log("2: Caso queira remover uma consulta");
-            console.log("3: Atualizar consulta");
-            console.log("4: Para ver as consultas que inseriu");
-            console.log("5: Sair do programa")
-        }
-        else if (multiplicação){
-            let resultado = numero1 * numero2 
-        console.log ("A multiplicacão entre " + numero1 + " e " + numero2 + " resulta em " + resultado + ".")
-        multiplicação = false;
-        console.log("\nEscolha uma das opções abaixo:");
-        console.log("1: Digitar as informações da consulta:");
-        console.log("2: Caso queira remover uma consulta");
-        console.log("3: Atualizar consulta");
-        console.log("4: Para ver as consultas que inseriu");
-        console.log("5: Sair do programa")
-        }
-        else if (divisão){
-            let resultado = numero1 / numero2 
-        console.log ("A divisão entre " + numero1 + " e " + numero2 + " resulta em " + resultado + ".")
-        divisão = false;
-        console.log("\nEscolha uma das opções abaixo:");
-        console.log("1: Digitar as informações da consulta:");
-        console.log("2: Caso queira remover uma consulta");
-        console.log("3: Atualizar consulta");
-        console.log("4: Para ver as consultas que inseriu");
-        console.log("5: Sair do programa")
-        }
-        else if (Porcentagem){
-            let resultado = (numero1/100)*numero2 
-        console.log ("A Porcentagem entre " + numero1 + " e " + numero2 + " resulta em " + resultado + ".")
-        Porcentagem = false;
-        console.log("\nEscolha uma das opções abaixo:");
-        console.log("1: Digitar as informações da consulta:");
-        console.log("2: Caso queira remover uma consulta");
-        console.log("3: Atualizar consulta");
-        console.log("4: Para ver as consultas que inseriu");
-        console.log("5: Sair do programa")
-        }
-  ;
   }
-}
-
 });
