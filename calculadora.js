@@ -76,35 +76,60 @@ process.stdin.on("data", function (data) {
 
         if(adição){
             let resultado = numero1 + numero2 
-           console.log ("A adicão entre " + numero1 + " e " + numero2 + "resulta em " + resultado + ".")
+           console.log ("A adicão entre " + numero1 + " e " + numero2 + " resulta em " + resultado + ".")
+           adição = false;
+           console.log("\nEscolha uma das opções abaixo:");
+           console.log("1: Digitar as informações da consulta:");
+           console.log("2: Caso queira remover uma consulta");
+           console.log("3: Atualizar consulta");
+           console.log("4: Para ver as consultas que inseriu");
+           console.log("5: Sair do programa")
+           
         }
         else if ( subtração){
-            let resultado1 = numero1 - numero2
-            console.log ("A subtração entre " + numero1 + " e " + numero2 + "resulta em " + resultado + ".")
+            let resultado = numero1 - numero2
+            console.log ("A subtração entre " + numero1 + " e " + numero2 + " resulta em " + resultado + ".")
+            subtração = false;
+            console.log("\nEscolha uma das opções abaixo:");
+            console.log("1: Digitar as informações da consulta:");
+            console.log("2: Caso queira remover uma consulta");
+            console.log("3: Atualizar consulta");
+            console.log("4: Para ver as consultas que inseriu");
+            console.log("5: Sair do programa")
         }
         else if (multiplicação){
             let resultado = numero1 * numero2 
-        console.log ("A multiplicacão entre " + numero1 + " e " + numero2 + "resulta em " + resultado + ".")
+        console.log ("A multiplicacão entre " + numero1 + " e " + numero2 + " resulta em " + resultado + ".")
+        multiplicação = false;
+        console.log("\nEscolha uma das opções abaixo:");
+        console.log("1: Digitar as informações da consulta:");
+        console.log("2: Caso queira remover uma consulta");
+        console.log("3: Atualizar consulta");
+        console.log("4: Para ver as consultas que inseriu");
+        console.log("5: Sair do programa")
         }
         else if (divisão){
             let resultado = numero1 / numero2 
-        console.log ("A divisão entre " + numero1 + " e " + numero2 + "resulta em " + resultado + ".")
+        console.log ("A divisão entre " + numero1 + " e " + numero2 + " resulta em " + resultado + ".")
+        divisão = false;
+        console.log("\nEscolha uma das opções abaixo:");
+        console.log("1: Digitar as informações da consulta:");
+        console.log("2: Caso queira remover uma consulta");
+        console.log("3: Atualizar consulta");
+        console.log("4: Para ver as consultas que inseriu");
+        console.log("5: Sair do programa")
         }
         else if (Porcentagem){
             let resultado = (numero1/100)*numero2 
-        console.log ("A Porcentagem entre " + numero1 + " e " + numero2 + "resulta em " + resultado + ".")
+        console.log ("A Porcentagem entre " + numero1 + " e " + numero2 + " resulta em " + resultado + ".")
+        Porcentagem = false;
+        console.log("\nEscolha uma das opções abaixo:");
+        console.log("1: Digitar as informações da consulta:");
+        console.log("2: Caso queira remover uma consulta");
+        console.log("3: Atualizar consulta");
+        console.log("4: Para ver as consultas que inseriu");
+        console.log("5: Sair do programa")
         }
-
-
-
-        
-
-
-  /* console.log (numero1+numero2)
-   console.log( numero1-numero2)
-   console.log (numero1*numero2)
-   console.log(numero1/numero2)
-   console.log ( (numero1/100 )*numero2)*/
   ;
   }
 }
