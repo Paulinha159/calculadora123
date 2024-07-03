@@ -1,11 +1,54 @@
 let numero1;
 let numero2;
 let resultados = 0;
+let opcao = 0;
+let adição = false;
+let subtração= false;
+let multiplicação= false;
+let divisão = false;
+let Porcentagem= false ;
 
-console.log("Digite 2 números que deseja fazer os calculos:");
+console.log("Escolha uma das opções operações abaixo:");
+console.log("1: adição:");
+console.log("2: subtração");
+console.log("3: multiplicação");
+console.log("4: divisão");
+console.log("5: Porcentagem");
+console.log("6: sair do programa")
+
 process.stdin.on("data", function (data) {
   let input = +data.toString().trim();
 
+  if (!opcao) {
+    opcao = parseInt(entrada_usuario);
+
+    switch (opcao) {
+        case 1:
+            console.log("Digite 2 números que deseja fazer os calculos:");
+             adição = true;
+                break
+
+        case 2:
+            console.log("Digite 2 números que deseja fazer os calculos:");
+             subtração = true;
+                break
+        case 3:
+            console.log("Digite 2 números que deseja fazer os calculos:");
+             multiplicação = true;
+                break
+        case 4:
+            console.log("Digite 2 números que deseja fazer os calculos:");
+             divisão = true;
+            break
+        case 5:
+            console.log("Digite 2 números que deseja fazer os calculos:");
+             Porcentagem = true;
+                break
+        case 6:
+            console.log("Encerrando o programa...");
+            process.exit();
+            break;
+    }}
   if (!numero1) {
     numero1 = input;
     let i;
@@ -27,5 +70,5 @@ process.stdin.on("data", function (data) {
    console.log ( (numero1/100 )*numero2)
     process.exit();
   }
-  
+
 });
