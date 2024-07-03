@@ -48,6 +48,16 @@ process.stdin.on("data", function (data) {
             console.log("Encerrando o programa...");
             process.exit();
             break;
+         default:
+                console.log("Opção inválida. Tente novamente.");
+                console.log("\nEscolha uma das opções abaixo:");
+                console.log("1: adição:");
+                console.log("2: subtração");
+                console.log("3: multiplicação");
+                console.log("4: divisão");
+                console.log("5: Porcentagem");
+                console.log("6: sair do programa");
+                break;
     }}
   if (!numero1) {
     numero1 = input;
