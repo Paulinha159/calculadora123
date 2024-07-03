@@ -17,11 +17,10 @@ console.log("5: Porcentagem");
 console.log("6: sair do programa")
 
 process.stdin.on("data", function (data) {
+  let entrada_usuario = data.toString().trim();
   let input = +data.toString().trim();
-
   if (!opcao) {
     opcao = parseInt(entrada_usuario);
-
     switch (opcao) {
         case 1:
             console.log("Digite 2 números que deseja fazer os calculos:");
@@ -58,7 +57,8 @@ process.stdin.on("data", function (data) {
                 console.log("5: Porcentagem");
                 console.log("6: sair do programa");
                 break;
-    }}
+    }
+  } else {
   if (!numero1) {
     numero1 = input;
     let i;
@@ -73,6 +73,12 @@ process.stdin.on("data", function (data) {
       i = numero2;
       maior = numero2;
     }
+
+
+
+
+
+    
    console.log (numero1+numero2)
    console.log( numero1-numero2)
    console.log (numero1*numero2)
@@ -80,5 +86,6 @@ process.stdin.on("data", function (data) {
    console.log ( (numero1/100 )*numero2)
     process.exit();
   }
+}
 
 });
