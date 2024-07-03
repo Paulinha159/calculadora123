@@ -78,12 +78,9 @@ process.stdin.on("data", function (data) {
             let resultado = numero1 + numero2 
            console.log ("A adicão entre " + numero1 + " e " + numero2 + " resulta em " + resultado + ".")
            adição = false;
-           console.log("\nEscolha uma das opções abaixo:");
-           console.log("1: Digitar as informações da consulta:");
-           console.log("2: Caso queira remover uma consulta");
-           console.log("3: Atualizar consulta");
-           console.log("4: Para ver as consultas que inseriu");
-           console.log("5: Sair do programa")
+           opcao=0
+           numero1=0
+           numero2=0
            
         }
         else if ( subtração){
